@@ -1,0 +1,33 @@
+cargo run
+
+curl -X GET http://127.0.0.1:8000/cars
+
+curl -X POST http://127.0.0.1:8000/cars -H "Content-Type: application/json" -d '{"make": "Ford", "model": "Mustang", "year": 1967, "mileage": 120000}'
+
+curl -X POST http://127.0.0.1:8000/login -H "Content-Type: application/json" -d '{"username": "admin", "password": "password"}'
+
+{ "token": "your_generated_jwt_token" }
+
+curl -X GET http://127.0.0.1:8000/cars -H "Authorization: Bearer your_generated_jwt_token"
+
+
+
+curl -X POST http://127.0.0.1:8000/users -H "Content-Type: application/json" -d '{"username": "admin", "password": "1234"}'
+curl -X POST http://127.0.0.1:8000/users2 -H "Content-Type: application/json" -d '{"username": "admin3", "password": "123456", "role": "admin"}'
+
+curl -X POST http://127.0.0.1:8000/users2 -H "Content-Type: application/json" -d '{"username": "admin5", "password": "1234567", "role": "super_admin"}'
+
+curl -X GET http://127.0.0.1:8000/all_users
+
+curl -X POST http://127.0.0.1:8000/login -H "Content-Type: application/json" -d '{"username": "admin3", "password": "123456"}'
+
+
+curl -X POST http://127.0.0.1:8000/login -H "Content-Type: application/json" -d '{"username": "admin3", "password": "123456", "role": "admin"}'
+
+curl -X POST http://127.0.0.1:8000/users -H "Content-Type: application/json" -d '{"username": "adminsss5", "password": "111234567", "role": "super_admin"}'
+
+curl -X POST http://127.0.0.1:8000/login -H "Content-Type: application/json" -d '{"username": "adminsss5", "password": "111234567", "role": "super_admin"}'
+
+curl -X POST http://127.0.0.1:8000/users2 -H "Content-Type: application/json" -d '{"username": "admin5777", "password": "1234567777", "role": "super_admin"}'
+
+curl -X GET http://127.0.0.1:8000/login -H "Content-Type: application/json" -d '{"username": "admin5777", "password": "1234567777"}'

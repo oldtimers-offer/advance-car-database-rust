@@ -1,0 +1,8 @@
+CREATE TABLE classic_cars (
+    id SERIAL PRIMARY KEY,
+    make VARCHAR NOT NULL,
+    model VARCHAR NOT NULL,
+    year INTEGER NOT NULL,
+    mileage INTEGER NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
